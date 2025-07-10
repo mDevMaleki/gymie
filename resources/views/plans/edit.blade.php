@@ -8,12 +8,12 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the plan</div>
+                            <div class="panel-head font-size-20">جزئیات برنامه را وارد کنید</div>
                         </div>
 
                         {!! Form::model($plan, ['method' => 'POST','action' => ['PlansController@update',$plan->id],'id'=>'plansform']) !!}
 
-                        @include('plans.form',['submitButtonText' => 'Update'])
+                        @include('plans.form',['submitButtonText' => 'به‌روزرسانی'])
 
                         {!! Form::Close() !!}
 
