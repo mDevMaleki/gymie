@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
 
-    <title>Gymie - Login</title>
+    <title>Gymie - ورود</title>
 
     <!-- BEGIN CORE FRAMEWORK -->
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -19,6 +19,7 @@
     <!-- BEGIN PLUGIN STYLES -->
     <link href="{{ URL::asset('assets/plugins/animate/animate.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/plugins/bootstrapValidator/bootstrapValidator.min.css') }}" rel="stylesheet"/>
+    <link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet"/>
     <!-- END PLUGIN STYLES -->
 
     <!-- BEGIN THEME STYLES -->
@@ -38,7 +39,7 @@
         </div>
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <strong>خطا!</strong> در وارد کردن اطلاعات مشکلی به وجود آمد.<br><br>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -51,21 +52,21 @@
             <div class="box-body padding-md">
 
                 <div class="form-group">
-                    <input type="text" name="email" class="form-control input-lg" placeholder="Email"/>
+                    <input type="text" name="email" class="form-control input-lg" placeholder="ایمیل"/>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control input-lg" placeholder="Password"/>
+                    <input type="password" name="password" class="form-control input-lg" placeholder="رمز عبور"/>
                 </div>
 
                 <div class="form-group margin-top-20">
                     <div class="checkbox checkbox-theme">
                         <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember Me</label>
+                        <label for="remember">مرا به خاطر بسپار</label>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-dark bg-light-green-500 padding-10 btn-block color-white"><i class="ion-log-in"></i> Sign in</button>
+                <button type="submit" class="btn btn-dark bg-light-green-500 padding-10 btn-block color-white"><i class="ion-log-in"></i> ورود</button>
             </div>
         </form>
         <div class="panel-footer padding-md no-margin no-border bg-grey-900 text-center color-white">&copy; 2016 Gymie by LUBUS</div>
