@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <!-- BEGIN HEAD -->
 <head>
     <meta charset="utf-8">
@@ -37,6 +37,7 @@
     <link href="{{ URL::asset('assets/css/helpers.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/mystyle.css') }}" rel="stylesheet"/>
+    <link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/print.css') }}" media="print" rel="stylesheet"/>
     <!-- END THEME STYLES -->
     @include('_jsVariables')
