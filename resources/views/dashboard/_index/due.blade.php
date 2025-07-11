@@ -8,11 +8,11 @@
                     <a href="{{ action('ExpensesController@edit',['id' => $due->id]) }}">{{ $due->due_date->format('Y-m-d') }}</a>
                 </td>
                 <td><a class="btn btn-info btn-xs btn pull-right"
-                       href="{{ action('ExpensesController@paid',['id' => $due->id]) }}">Pay</a></td>
+                       href="{{ action('ExpensesController@paid',['id' => $due->id]) }}">پرداخت</a></td>
             </tr>
         @empty
             <div class="tab-empty-panel font-size-24 color-grey-300">
-                No Data
+                داده‌ای موجود نیست
             </div>
         @endforelse
     </table>
