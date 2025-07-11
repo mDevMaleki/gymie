@@ -20,12 +20,12 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the expense category</div>
+                            <div class="panel-head font-size-20">جزئیات دسته‌بندی هزینه را وارد کنید</div>
                         </div>
                         <div class="panel-body">
                             {!! Form::Open(['url' => 'expenses/categories', 'id' => 'expensecategoriesform']) !!}
 
-                            @include('expenseCategories.form',['submitButtonText' => 'Add'])
+                            @include('expenseCategories.form',['submitButtonText' => 'افزودن'])
 
                             {!! Form::Close() !!}
                         </div>
