@@ -2,14 +2,14 @@
     <div class="col-md-12">
         <div class="panel no-border ">
             <div class="panel-title">
-                <div class="panel-head font-size-20">Item details of invoice</div>
+                <div class="panel-head font-size-20">جزئیات آیتم‌های صورتحساب</div>
             </div>
             <div class="panel-body">
                 <table id="_item" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>Item Name</th>
-                        <th>Amount</th>
+                        <th>نام آیتم</th>
+                        <th>مبلغ</th>
                     </tr>
                     </thead>
                     <tbody>

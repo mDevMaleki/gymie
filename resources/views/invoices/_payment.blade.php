@@ -2,15 +2,15 @@
     <div class="col-md-12">
         <div class="panel no-border ">
             <div class="panel-title">
-                <div class="panel-head font-size-20">Payment transaction details of invoice</div>
+                <div class="panel-head font-size-20">جزئیات تراکنش‌های پرداخت صورتحساب</div>
             </div>
             <div class="panel-body">
                 <table id="_payment" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>Amount Recieved</th>
-                        <th>As</th>
-                        <th>On</th>
+                        <th>مبلغ دریافت‌شده</th>
+                        <th>به‌صورت</th>
+                        <th>در تاریخ</th>
                     </tr>
                     </thead>
                     <tbody>

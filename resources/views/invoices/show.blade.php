@@ -6,7 +6,7 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100 margin-bottom-20 hidden-print">
             @include('flash::message')
-            <h1 class="page-title">Invoice</h1>
+            <h1 class="page-title">صورتحساب</h1>
         </div>
         <!-- END PAGE HEADING -->
 
@@ -23,16 +23,16 @@
                                     <h3 class="no-margin display-inline-block pull-left"> {{ $settings['gym_name'] }}</h3>
                                 @endif
 
-                                <h4 class="pull-right no-margin">Invoice # {{ $invoice->invoice_number}}</h4>
+                                <h4 class="pull-right no-margin">صورتحساب شماره {{ $invoice->invoice_number}}</h4>
                             </div>
 
                             <div class="row"> <!-- Inner row -->
                                 <div class="col-xs-6"> <!--Left Side Details -->
                                     <address>
-                                        <strong>Billed To</strong><br>
+                                        <strong>صورتحساب به</strong><br>
                                         {{ $invoice->member->name }} ({{$invoice->member->member_code}})<br>
 
-                                        <strong>Payment Mode(s)</strong><br>
+                                        <strong>روش‌های پرداخت</strong><br>
                                         <?php
                                         $modes = array();
                                         foreach ($invoice->paymentDetails->unique('mode') as $payment_mode) {
@@ -40,18 +40,18 @@
                                         }
                                         echo implode($modes, ',');
                                         ?><br>
-                                        <strong>Payment</strong><br>
+                                        <strong>وضعیت پرداخت</strong><br>
                                         {{ Utilities::getInvoiceStatus ($invoice->status) }}<br>
                                     </address>
                                 </div>
                                 <div class="col-xs-6 text-right"> <!--Right Side Details -->
                                     <address>
-                                        <strong>Gym Address</strong><br>
+                                        <strong>آدرس باشگاه</strong><br>
                                         {{ $settings['gym_address_1'] }}<br>
                                         {{ $settings['gym_address_2'] }}<br>
-                                        <strong>Generated On</strong><br>
+                                        <strong>تاریخ صدور</strong><br>
                                         {{ $invoice->created_at->toDayDateTimeString()}}<br>
-                                        <strong>Next Due</strong><br>
+                                        <strong>سررسید بعدی</strong><br>
                                         In {{ $invoice->subscription->start_date->diffInDays($invoice->subscription->end_date) }} days
                                         On {{ $invoice->subscription->end_date->toFormattedDateString() }}<br>
                                     </address>
@@ -61,14 +61,14 @@
                             <!--Invoice Details view -->
 
                             <div class="bg-amber-50 padding-md margin-bottom-20 margin-top-20" id="invoiceBlock">
-                                <h4 class="margin-bottom-30 color-grey-700">Invoice Details</h4>
+                                <h4 class="margin-bottom-30 color-grey-700">جزئیات صورتحساب</h4>
 
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <td><strong>Item Name</strong></td>
-                                            <td class="text-right"><strong>Amount</strong></td>
+                                            <td><strong>نام آیتم</strong></td>
+                                            <td class="text-right"><strong>مبلغ</strong></td>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -79,26 +79,26 @@
                                             </tr>
                                         @endforeach
                                         <tr>
-                                            <td>Tax</td>
+                                            <td>مالیات</td>
                                             <td class="text-right">{{ $invoice->tax}}</td>
                                         </tr>
                                         @if($invoice->additional_fees != 0)
                                             <tr>
-                                                <td>Additional fees</td>
+                                                <td>هزینه‌های اضافی</td>
                                                 <td class="text-right">{{ $invoice->additional_fees}}</td>
                                             </tr>
                                         @endif
                                         <tr>
-                                            <td class="text-left"><strong>Discount</strong></td>
+                                            <td class="text-left"><strong>تخفیف</strong></td>
                                             <td class="text-right">- {{ $invoice->discount_amount}}</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-left"><strong>Total</strong></td>
+                                            <td class="text-left"><strong>جمع کل</strong></td>
                                             <td class="text-right">{{ $invoice->total}}</td>
                                         </tr>
                                         @if($invoice->pending_amount != 0)
                                             <tr>
-                                                <td class="no-border text-left"><strong>Pending</strong></td>
+                                                <td class="no-border text-left"><strong>باقی‌مانده</strong></td>
                                                 <td class="no-border text-right">{{$invoice->pending_amount}}</td>
                                             </tr>
                                         @endif
@@ -113,12 +113,12 @@
                             @if($invoice->pending_amount != 0)
                                 @permission(['manage-gymie','manage-payments','add-payment'])
                                 <a class="btn btn-success pull-right" href="{{ action('InvoicesController@createPayment',['id' => $invoice->id]) }}"><i
-                                            class="ion-card margin-right-5"></i> Accept Payment</a>
+                                            class="ion-card margin-right-5"></i> ثبت پرداخت</a>
                                 @endpermission
                             @endif
                             @permission(['manage-gymie','manage-invoices','print-invoice'])
                             <button class="btn btn-primary pull-right margin-right-10" onclick="window.print();"><i class="ion-printer margin-right-5"></i>
-                                Print
+                                چاپ
                             </button>
                             @endpermission
                         </div> <!-- / Footer buttons -->
