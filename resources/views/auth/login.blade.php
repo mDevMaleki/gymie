@@ -29,6 +29,8 @@
     <link href="{{ URL::asset('assets/css/helpers.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/mystyle.css') }}" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css" rel="stylesheet"/>
     <!-- END THEME STYLES -->
 </head>
 <body class="auth-page height-auto bg-grey-600">
@@ -51,12 +53,14 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             <div class="box-body padding-md">
 
-                <div class="form-group">
-                    <input type="text" name="email" class="form-control input-lg" placeholder="ایمیل"/>
+                <div class="form-group label-floating">
+                    <label class="control-label" for="email">ایمیل</label>
+                    <input type="text" name="email" id="email" class="form-control" />
                 </div>
 
-                <div class="form-group">
-                    <input type="password" name="password" class="form-control input-lg" placeholder="رمز عبور"/>
+                <div class="form-group label-floating">
+                    <label class="control-label" for="password">رمز عبور</label>
+                    <input type="password" name="password" id="password" class="form-control" />
                 </div>
 
                 <div class="form-group margin-top-20">
@@ -79,6 +83,11 @@
 <script src="{{ URL::asset('assets/plugins/slimScroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('assets/js/core.js') }}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
+
+<!-- material design -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+<script>$.material.init();</script>
 
 <!-- bootstrap validator -->
 <script src="{{ URL::asset('assets/plugins/bootstrapValidator/bootstrapValidator.min.js') }}" type="text/javascript"></script>
