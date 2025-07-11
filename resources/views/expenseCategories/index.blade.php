@@ -6,17 +6,17 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
-            <h1 class="page-title no-line-height">Expense Categories
+            <h1 class="page-title no-line-height">دسته‌بندی‌های هزینه
                 @permission(['manage-gymie','manage-expenseCategories','add-expenseCategory'])
-                <a href="{{ action('ExpenseCategoriesController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">Add New</a>
-                <small>Details of all gym expense categories</small>
+                <a href="{{ action('ExpenseCategoriesController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">افزودن دسته‌بندی</a>
+                <small>جزئیات تمام دسته‌بندی‌های هزینه باشگاه</small>
             </h1>
             @permission(['manage-gymie','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right"><span data-toggle="counter" data-start="0"
                                                                                                                      data-from="0" data-to="{{ $count }}"
                                                                                                                      data-speed="600"
                                                                                                                      data-refresh-interval="10"></span>
-                <small class="color-blue-grey-600 display-block margin-top-5 font-size-14">Total Categories</small>
+                <small class="color-blue-grey-600 display-block margin-top-5 font-size-14">تعداد کل دسته‌بندی‌ها</small>
             </h1>
             @endpermission
             @endpermission
@@ -32,14 +32,14 @@
 
                         <div class="panel-body no-padding-top bg-white">
                             @if($expenseCategories->count() == 0)
-                                <h4 class="text-center padding-top-15">Sorry! No records found</h4>
+                                <h4 class="text-center padding-top-15">متأسفیم! رکوردی یافت نشد</h4>
                             @else
                                 <table id="expenseCategories" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th class="text-center">Category Name</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Actions</th>
+                                        <th class="text-center">نام دسته‌بندی</th>
+                                        <th class="text-center">وضعیت</th>
+                                        <th class="text-center">اقدامات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -51,7 +51,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-info">Actions</button>
+                                                    <button type="button" class="btn btn-info">اقدامات</button>
                                                     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
@@ -60,7 +60,7 @@
                                                         <li>
                                                             @permission(['manage-gymie','manage-expenseCategories','edit-expenseCategory'])
                                                             <a href="{{ action('ExpenseCategoriesController@edit',['id' => $expenseCategory->id]) }}">
-                                                                Edit Details
+                                                                ویرایش جزئیات
                                                             </a>
                                                             @endpermission
                                                         </li>
@@ -72,10 +72,10 @@
                                                             <a href="#"
                                                                class="delete-record"
                                                                data-dependency="{{ $dependency }}"
-                                                               data-dependency-message="You have expenses assigned to this category, either delete them or assign them to new category"
+                                                               data-dependency-message="برای این دسته‌بندی هزینه‌هایی ثبت شده است، آنها را حذف یا به دسته‌بندی دیگری منتقل کنید"
                                                                data-delete-url="{{ url('expenses/categories/'.$expenseCategory->id.'/archive') }}"
                                                                data-record-id="{{$expenseCategory->id}}">
-                                                                Delete Category
+                                                                حذف دسته‌بندی
                                                             </a>
                                                             @endpermission
                                                         </li>
@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="gymie_paging_info">
-                                            Showing page {{ $expenseCategories->currentPage() }} of {{ $expenseCategories->lastPage() }}
+                                            نمایش صفحه {{ $expenseCategories->currentPage() }} از {{ $expenseCategories->lastPage() }}
                                         </div>
                                     </div>
 
