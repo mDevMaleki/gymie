@@ -6,8 +6,8 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
-            <h1 class="page-title">Settings</h1>
-            <a href="{{ action('SettingsController@edit') }}" class="btn btn-primary active pull-right" role="button"><i class="ion-compose"></i> Edit</a></h1>
+            <h1 class="page-title">تنظیمات</h1>
+            <a href="{{ action('SettingsController@edit') }}" class="btn btn-primary active pull-right" role="button"><i class="ion-compose"></i> ویرایش</a></h1>
         </div>
 
         <div class="container-fluid">
@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title bg-white">
-                            <div class="panel-head font-size-18"><i class="fa fa-cogs"></i> General</div>
+                            <div class="panel-head font-size-18"><i class="fa fa-cogs"></i> عمومی</div>
                         </div>
 
                         <div class="panel-body"> <!-- Panel Body -->
@@ -24,21 +24,21 @@
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Gym Name</label>
+                                        <label>نام باشگاه</label>
                                         <p>{{ $settings['gym_name'] }}</p>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Financial year start</label>
+                                        <label>شروع سال مالی</label>
                                         <p>{{ $settings['financial_start'] }}</p>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Financial year end</label>
+                                        <label>پایان سال مالی</label>
                                         <p>{{ $settings['financial_end'] }}</p>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label>Gym Address Line 1</label>
+                                                <label>نشانی باشگاه خط ۱</label>
                                                 <p>{{ $settings['gym_address_1'] }}</p>
                                             </div>
                                         </div>
@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label>Gym Address Line 2</label>
+                                                <label>نشانی باشگاه خط ۲</label>
                                                 <p>{{ $settings['gym_address_2'] }}</p>
                                             </div>
                                         </div>
@@ -82,12 +82,12 @@
             </div> <!-- / Main Row -->
 
 
-            <!--Invoice Settings -->
+            <!--تنظیمات فاکتور -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title bg-white">
-                            <div class="panel-head font-size-18"><i class="fa fa-file"></i> Invoice</div>
+                            <div class="panel-head font-size-18"><i class="fa fa-file"></i> فاکتور</div>
                         </div>
                         <div class="panel-body">
                             <div class="row">        <!-- Panel Row -->
@@ -96,28 +96,28 @@
                                     <div class="row">   <!-- Inner row -->
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Invoice Prefix</label>
+                                                <label>پیشوند فاکتور</label>
                                                 <p>{{ $settings['invoice_prefix'] }}</p>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Invoice Last Number</label>
+                                                <label>آخرین شماره فاکتور</label>
                                                 <p>{{ $settings['invoice_last_number'] }}</p>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Display on invoice</label>
+                                                <label>نمایش روی فاکتور</label>
                                                 <p>{{ Utilities::getDisplay($settings['invoice_name_type']) }}</p>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Invoice number mode</label>
+                                                <label>حالت شماره فاکتور</label>
                                                 <p>{{ Utilities::getMode($settings['invoice_number_mode']) }}</p>
                                             </div>
                                         </div>
@@ -132,12 +132,12 @@
                 </div>    <!-- / Main Column -->
             </div>    <!-- / Main Row -->
 
-            <!-- member Settings -->
+            <!-- تنظیمات عضو -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title bg-white">
-                            <div class="panel-head font-size-18"><i class="fa fa-users"></i> Member</div>
+                            <div class="panel-head font-size-18"><i class="fa fa-users"></i> عضو</div>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -146,21 +146,21 @@
                                     <div class="row">     <!-- Inner row -->
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label>Member code prefix</label>
+                                                <label>پیشوند عضو</label>
                                                 <p>{{ $settings['member_prefix'] }}</p>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label>Member last number</label>
+                                                <label>آخرین شماره عضو</label>
                                                 <p>{{ $settings['member_last_number'] }}</p>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label>Member number mode</label>
+                                                <label>حالت شماره عضو</label>
                                                 <p>{{ Utilities::getMode($settings['member_number_mode']) }}</p>
                                             </div>
                                         </div>
