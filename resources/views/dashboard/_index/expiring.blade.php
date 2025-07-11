@@ -31,18 +31,18 @@
                 @permission(['manage-gymie','manage-subscriptions','renew-subscription'])
                 <td>
                     <a class="btn btn-info btn-xs btn pull-right"
-                       href="{{ action('SubscriptionsController@renew',['id' => $expiring->invoice_id]) }}">Renew</a>
+                       href="{{ action('SubscriptionsController@renew',['id' => $expiring->invoice_id]) }}">تمدید</a>
                 </td>
                 @endpermission
             </tr>
         @empty
             <div class="tab-empty-panel font-size-24 color-grey-300">
-                No Data
+                داده‌ای موجود نیست
             </div>
         @endforelse
     </table>
 </div>
 @if(!$expirings->isEmpty())
     <a class="btn btn-color btn-xs palette-concrete pull-right margin-right-10 margin-top-10"
-       href="{{ action('SubscriptionsController@expiring') }}">View All</a>
+       href="{{ action('SubscriptionsController@expiring') }}">نمایش همه</a>
 @endif

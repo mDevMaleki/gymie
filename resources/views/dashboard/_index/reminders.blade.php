@@ -17,7 +17,7 @@
             </tr>
         @empty
             <div class="tab-empty-panel font-size-24 color-grey-300">
-                No Data
+                داده‌ای موجود نیست
             </div>
         @endforelse
     </table>

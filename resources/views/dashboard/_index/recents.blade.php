@@ -30,12 +30,12 @@
             </tr>
         @empty
             <div class="tab-empty-panel font-size-24 color-grey-300">
-                No Data
+                داده‌ای موجود نیست
             </div>
         @endforelse
     </table>
 </div>
 @if(!$recents->isEmpty())
     <a class="btn btn-color btn-xs palette-concrete pull-right margin-right-10 margin-top-10"
-       href="{{ action('MembersController@index') }}">View All</a>
+       href="{{ action('MembersController@index') }}">نمایش همه</a>
 @endif

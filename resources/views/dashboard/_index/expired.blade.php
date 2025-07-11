@@ -31,24 +31,24 @@
                 <td>
                     {!! Form::Open(['method' => 'POST','action' => ['SubscriptionsController@cancelSubscription',$expired->id]]) !!}
                     @permission(['manage-gymie','manage-subscriptions','cancel-subscription'])
-                    <button class="btn btn-xs btn-danger pull-right margin-left-5" type="submit">Cancel</button>
+                    <button class="btn btn-xs btn-danger pull-right margin-left-5" type="submit">لغو</button>
                     @endpermission
 
                     @permission(['manage-gymie','manage-subscriptions','renew-subscription'])
                     <a class="btn btn-xs btn-info pull-right"
-                       href="{{ action('SubscriptionsController@renew',['id' => $expired->invoice_id]) }}">Renew</a>
+                       href="{{ action('SubscriptionsController@renew',['id' => $expired->invoice_id]) }}">تمدید</a>
                     @endpermission
                     {!! Form::Close() !!}
                 </td>
             </tr>
         @empty
             <div class="tab-empty-panel font-size-24 color-grey-300">
-                No Data
+                داده‌ای موجود نیست
             </div>
         @endforelse
     </table>
 </div>
 @if(!$allExpired->isEmpty())
     <a class="btn btn-color btn-xs palette-concrete pull-right margin-right-10 margin-top-10"
-       href="{{ action('SubscriptionsController@expired') }}">View All</a>
+       href="{{ action('SubscriptionsController@expired') }}">نمایش همه</a>
 @endif
