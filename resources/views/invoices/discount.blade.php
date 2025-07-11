@@ -23,21 +23,21 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the discount</div>
+                            <div class="panel-head font-size-20">ورود جزئیات تخفیف</div>
                         </div>
 
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('invoice_number','Invoice Number') !!}
+                                        {!! Form::label('invoice_number','شماره صورتحساب') !!}
                                         {!! Form::text('invoice_number',$invoice->invoice_number,['class'=>'form-control', 'id' => 'invoice_number','readonly' => 'readonly']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('subscription_amount','Subscription fee') !!}
+                                        {!! Form::label('subscription_amount','هزینه اشتراک') !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('subscription_amount',$invoice->invoiceDetails->sum('item_amount'),['class'=>'form-control', 'id' => 'subscription_amount','readonly' => 'readonly']) !!}
@@ -47,7 +47,7 @@
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('additional_fees','Additional fees') !!}
+                                        {!! Form::label('additional_fees','هزینه‌های اضافی') !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('additional_fees',$invoice->additional_fees,['class'=>'form-control', 'id' => 'additional_fees','readonly' => 'readonly']) !!}
@@ -57,7 +57,7 @@
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('taxes_amount',sprintf('Tax @ %s %%',Utilities::getSetting('taxes'))) !!}
+                                        {!! Form::label('taxes_amount',sprintf('مالیات %s %%',Utilities::getSetting('taxes'))) !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('taxes_amount',$invoice->tax,['class'=>'form-control', 'id' => 'taxes_amount','readonly' => 'readonly']) !!}
@@ -69,23 +69,23 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('discount_percent','Discount') !!}
+                                        {!! Form::label('discount_percent','تخفیف') !!}
                                         <?php
                                         $discounts = explode(",", str_replace(" ", "", (Utilities::getSetting('discounts'))));
                                         $discounts_list = array_combine($discounts, $discounts);
                                         ?>
                                         <select id="discount_percent" name="discount_percent" class="form-control selectpicker show-tick show-menu-arrow">
-                                            <option value="0">None</option>
+                                            <option value="0">هیچکدام</option>
                                             @foreach($discounts_list as $list)
                                                 <option value="{{ $list }}" {{ ($invoice->discount_percent == $list ? "selected" : "") }}>{{ $list.'%' }}</option>
                                             @endforeach
-                                            <option value="custom" {{ ($invoice->discount_percent == "custom" ? "selected" : "") }}>Custom(Rs.)</option>
+                                            <option value="custom" {{ ($invoice->discount_percent == "custom" ? "selected" : "") }}>دلخواه(ریال)</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('discount_amount','Discount amount') !!}
+                                        {!! Form::label('discount_amount','مبلغ تخفیف') !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('discount_amount',$invoice->discount_amount,['class'=>'form-control', 'id' => 'discount_amount','readonly' => 'readonly']) !!}
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('discount_note','Discount note') !!}
+                                        {!! Form::label('discount_note','توضیح تخفیف') !!}
                                         {!! Form::text('discount_note',$invoice->discount_note,['class'=>'form-control', 'id' => 'discount_note']) !!}
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                     <div class="row">
                         <div class="col-sm-2 pull-right">
                             <div class="form-group">
-                                {!! Form::submit('Apply Discount', ['class' => 'btn btn-primary pull-right']) !!}
+                                {!! Form::submit('اعمال تخفیف', ['class' => 'btn btn-primary pull-right']) !!}
                             </div>
                         </div>
                     </div>
