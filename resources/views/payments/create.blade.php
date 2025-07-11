@@ -8,12 +8,12 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the payment</div>
+                            <div class="panel-head font-size-20">جزئیات پرداخت را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['url' => 'payments','id' => 'paymentsform']) !!}
 
-                        @include('payments.form',['submitButtonText' => 'Accept Payment'])
+                        @include('payments.form',['submitButtonText' => 'ثبت پرداخت'])
 
                         {!! Form::Close() !!}
 

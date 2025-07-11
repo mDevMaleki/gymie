@@ -7,7 +7,7 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the payment</div>
+                            <div class="panel-head font-size-20">جزئیات پرداخت را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['url' => 'payments','id' => 'paymentsform']) !!}
@@ -18,7 +18,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <?php  $invoiceList = App\Invoice::lists('invoice_number', 'id'); ?>
-                                        {!! Form::label('invoice_id','Invoice Number') !!}
+                                        {!! Form::label('invoice_id','شماره فاکتور') !!}
                                         {!! Form::select('invoice_id',$invoiceList,$payment_detail->invoice_id,['class'=>'form-control selectpicker show-tick', 'id' => 'invoice_id', 'data-live-search'=> 'true']) !!}
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('payment_amount','Amount') !!}
+                                        {!! Form::label('payment_amount','مبلغ') !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('payment_amount',$payment_detail->invoice->pending_amount,['class'=>'form-control', 'id' => 'payment_amount']) !!}
@@ -40,8 +40,8 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('mode','Mode') !!}
-                                        {!! Form::select('mode',array('1' => 'Cash', '0' => 'Cheque'),1,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
+                                        {!! Form::label('mode','روش پرداخت') !!}
+                                        {!! Form::select('mode',array('1' => 'نقدی', '0' => 'چک'),1,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            {!! Form::label('number','Cheque number') !!}
+                                            {!! Form::label('number','شماره چک') !!}
                                             {!! Form::text('number',null,['class'=>'form-control', 'id' => 'number']) !!}
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            {!! Form::label('date','Cheque date') !!}
+                                            {!! Form::label('date','تاریخ چک') !!}
                                             {!! Form::text('date',null,['class'=>'form-control datepicker-default', 'id' => 'date']) !!}
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::submit('Accept Payment', ['class' => 'btn btn-primary pull-right']) !!}
+                                        {!! Form::submit('ثبت پرداخت', ['class' => 'btn btn-primary pull-right']) !!}
                                     </div>
                                 </div>
                             </div>
