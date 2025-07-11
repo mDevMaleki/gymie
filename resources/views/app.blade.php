@@ -39,6 +39,8 @@
     <link href="{{ URL::asset('assets/css/mystyle.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/rtl.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/print.css') }}" media="print" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css" rel="stylesheet"/>
     <!-- END THEME STYLES -->
     @include('_jsVariables')
     @yield('header_scripts')
@@ -316,6 +318,10 @@
 
 <!-- gymie -->
 <script src="{{ URL::asset('assets/js/gymie.js') }}" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+<script>$.material.init();</script>
 
 @yield('footer_script_init')
 
