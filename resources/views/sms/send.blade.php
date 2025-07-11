@@ -11,7 +11,7 @@
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <strong>اوه!</strong> در ورودی‌های شما مشکلی وجود دارد.<br><br>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the message</div>
+                            <div class="panel-head font-size-20">جزئیات پیام را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['url' => 'sms/shoot','id'=>'sendform']) !!}
@@ -37,30 +37,30 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('send_to','Send To') !!} </br>
+                                        {!! Form::label('send_to','ارسال به') !!} </br>
                                         <div class="checkbox checkbox-theme display-inline-block">
                                             <input type="checkbox" name="send[]" id="activeMembers" value="0">
-                                            <label for="activeMembers" class="padding-left-30">Active members</label>
+                                            <label for="activeMembers" class="padding-left-30">اعضای فعال</label>
                                         </div>
 
                                         <div class="checkbox checkbox-theme display-inline-block">
                                             <input type="checkbox" name="send[]" id="inactiveMembers" value="1">
-                                            <label for="inactiveMembers" class="padding-left-30">Inactive members</label>
+                                            <label for="inactiveMembers" class="padding-left-30">اعضای غیرفعال</label>
                                         </div>
 
                                         <div class="checkbox checkbox-theme display-inline-block margin-right-5">
                                             <input type="checkbox" name="send[]" id="leadEnquiries" value="2">
-                                            <label for="leadEnquiries" class="padding-left-30">Lead enquiries</label>
+                                            <label for="leadEnquiries" class="padding-left-30">استعلام‌های سرنخ</label>
                                         </div>
 
                                         <div class="checkbox checkbox-theme display-inline-block margin-right-11">
                                             <input type="checkbox" name="send[]" id="lostEnquiries" value="3">
-                                            <label for="lostEnquiries" class="padding-left-30">Lost enquiries</label>
+                                            <label for="lostEnquiries" class="padding-left-30">استعلام‌های از دست رفته</label>
                                         </div>
 
                                         <div class="checkbox checkbox-theme display-inline-block margin-right-5">
                                             <input type="checkbox" name="send[]" id="custom" value="4">
-                                            <label for="custom" class="padding-left-30">Custom</label>
+                                            <label for="custom" class="padding-left-30">سفارشی</label>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="sender_id">Sender Id</label>
+                                            <label for="sender_id">شناسه فرستنده</label>
                                             <select id="sender_id" name="sender_id" class="form-control selectpicker show-tick">
                                                 @foreach($senderIds as $senderId)
                                                     <option value="{{ $senderId }}">{{ $senderId }}</option>
@@ -90,8 +90,8 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group" id="customcontactsdiv">
-                                        {!! Form::label('customcontacts','Contact numbers') !!}
-                                        {!! Form::text('customcontacts',null,['class'=>'form-control tokenfield', 'id' => 'customcontacts', 'placeholder' => 'Type 10 digit contact numbers and hit enter']) !!}
+                                        {!! Form::label('customcontacts','شماره‌های تماس') !!}
+                                        {!! Form::text('customcontacts',null,['class'=>'form-control tokenfield', 'id' => 'customcontacts', 'placeholder' => 'شماره‌های 10 رقمی را تایپ کرده و اینتر بزنید']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('message','Message text') !!}
+                                        {!! Form::label('message','متن پیام') !!}
                                         {!! Form::textarea('message',null,['class'=>'form-control', 'id' => 'message','rows' => '5']) !!}
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::submit('Send Now', ['class' => 'btn btn-primary pull-right']) !!}
+                                        {!! Form::submit('ارسال کن', ['class' => 'btn btn-primary pull-right']) !!}
                                     </div>
                                 </div>
                             </div>

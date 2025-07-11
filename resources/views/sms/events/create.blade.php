@@ -9,7 +9,7 @@
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <strong>اوه!</strong> در ورودی‌های شما مشکلی وجود دارد.<br><br>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -22,12 +22,12 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the sms event</div>
+                            <div class="panel-head font-size-20">جزئیات رویداد پیامک را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['url' => 'sms/events','id'=>'smseventsform']) !!}
 
-                        @include('sms.events._form',['submitButtonText' => 'Add'])
+                        @include('sms.events._form',['submitButtonText' => 'افزودن'])
 
                         {!! Form::Close() !!}
 
