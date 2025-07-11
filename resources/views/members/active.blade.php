@@ -7,15 +7,15 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
-            <h1 class="page-title no-line-height">Active Members
-                <small>Details of all active gym members</small>
+            <h1 class="page-title no-line-height">اعضای فعال
+                <small>جزئیات تمامی اعضای فعال باشگاه</small>
             </h1>
             @permission(['manage-gymie','pagehead-stats'])
             <h1 class="font-size-30 text-right color-blue-grey-600 animated fadeInDown total-count pull-right"><span data-toggle="counter" data-start="0"
                                                                                                                      data-from="0" data-to="{{ $count }}"
                                                                                                                      data-speed="600"
                                                                                                                      data-refresh-interval="10"></span>
-                <small class="color-blue-grey-600 display-block margin-top-5 font-size-14">Active Members</small>
+                <small class="color-blue-grey-600 display-block margin-top-5 font-size-14">اعضای فعال</small>
             </h1>
             @endpermission
         </div><!-- / PageHead -->
@@ -33,7 +33,7 @@
 
                                         <div class="col-sm-3">
 
-                                            {!! Form::label('member-daterangepicker','Date range') !!}
+                                            {!! Form::label('member-daterangepicker','بازه زمانی') !!}
 
                                             <div id="member-daterangepicker"
                                                  class="gymie-daterangepicker btn bg-grey-50 daterange-padding no-border color-grey-600 hidden-xs no-shadow">
@@ -47,24 +47,24 @@
                                         </div>
 
                                         <div class="col-sm-2">
-                                            {!! Form::label('sort_field','Sort By') !!}
-                                            {!! Form::select('sort_field',array('created_at' => 'Date','name' => 'Name', 'member_code' => 'Member code', 'plan_name' => 'Plan name', 'status' => 'Status'),old('sort_field'),['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sort_field']) !!}
+                                            {!! Form::label('sort_field','مرتب‌سازی بر اساس') !!}
+                                            {!! Form::select('sort_field',array('created_at' => 'تاریخ','name' => 'نام', 'member_code' => 'کد عضو', 'plan_name' => 'نام پلن', 'status' => 'وضعیت'),old('sort_field'),['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sort_field']) !!}
                                         </div>
 
                                         <div class="col-sm-2">
-                                            {!! Form::label('sort_direction','Order') !!}
-                                            {!! Form::select('sort_direction',array('desc' => 'Descending','asc' => 'Ascending'),old('sort_direction'),['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sort_direction']) !!}</span>
+                                            {!! Form::label('sort_direction','ترتیب') !!}
+                                            {!! Form::select('sort_direction',array('desc' => 'نزولی','asc' => 'صعودی'),old('sort_direction'),['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sort_direction']) !!}</span>
                                         </div>
 
                                         <div class="col-xs-3">
-                                            {!! Form::label('search','Keyword') !!}
+                                            {!! Form::label('search','کلمه کلیدی') !!}
                                             <input value="{{ old('search') }}" name="search" id="search" type="text" class="form-control padding-right-35"
-                                                   placeholder="Search...">
+                                                   placeholder="جستجو...">
                                         </div>
 
                                         <div class="col-xs-2">
                                             {!! Form::label('&nbsp;') !!} <br/>
-                                            <button type="submit" class="btn btn-primary active no-border">GO</button>
+                                            <button type="submit" class="btn btn-primary active no-border">برو</button>
                                         </div>
 
                                         {!! Form::Close() !!}
@@ -77,19 +77,19 @@
                         <div class="panel-body bg-white">
 
                             @if($members->count() == 0)
-                                <h4 class="text-center padding-top-15">Sorry! No records found</h4>
+                                <h4 class="text-center padding-top-15">متأسفیم! رکوردی یافت نشد</h4>
                             @else
                                 <table id="members" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Photo</th>
-                                        <th>Code</th>
-                                        <th>Name</th>
-                                        <th>Contact</th>
-                                        <th>Plan name</th>
-                                        <th>Member since</th>
-                                        <th>Status</th>
-                                        <th class="text-center">Actions</th>
+                                        <th>عکس</th>
+                                        <th>کد</th>
+                                        <th>نام</th>
+                                        <th>اطلاعات تماس</th>
+                                        <th>نام پلن</th>
+                                        <th>عضو از تاریخ</th>
+                                        <th>وضعیت</th>
+                                        <th class="text-center">اقدامات</th>
                                     </tr>
                                     </thead>
 
@@ -124,18 +124,18 @@
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
                                                             @permission(['manage-gymie','manage-members','view-member'])
-                                                            <a href="{{ action('MembersController@show',['id' => $member->id]) }}">View details</a>
+                                                            <a href="{{ action('MembersController@show',['id' => $member->id]) }}">مشاهده جزئیات</a>
                                                             @endpermission
                                                         </li>
                                                         <li>
                                                             @permission(['manage-gymie','manage-members','edit-member'])
-                                                            <a href="{{ action('MembersController@edit',['id' => $member->id]) }}">Edit details</a>
+                                                            <a href="{{ action('MembersController@edit',['id' => $member->id]) }}">ویرایش جزئیات</a>
                                                             @endpermission
                                                         </li>
                                                         <li>
                                                             @permission(['manage-gymie','manage-members','delete-member'])
                                                             <a href="#" class="delete-record" data-delete-url="{{ url('members/'.$member->id.'/archive') }}"
-                                                               data-record-id="{{$member->id}}">Delete member</a>
+                                                               data-record-id="{{$member->id}}">حذف عضو</a>
                                                             @endpermission
                                                         </li>
                                                     </ul>
@@ -150,7 +150,7 @@
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="gymie_paging_info">
-                                            Showing page {{ $members->currentPage() }} of {{ $members->lastPage() }}
+                                            نمایش صفحه {{ $members->currentPage() }} از {{ $members->lastPage() }}
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
