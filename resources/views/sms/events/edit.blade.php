@@ -8,12 +8,12 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the sms event</div>
+                            <div class="panel-head font-size-20">جزئیات رویداد پیامک را وارد کنید</div>
                         </div>
 
                         {!! Form::model($event, ['method' => 'POST','action' => ['SmsController@updateEvent',$event->id],'id'=>'smseventsform']) !!}
 
-                        @include('sms.events._form',['submitButtonText' => 'Update'])
+                        @include('sms.events._form',['submitButtonText' => 'به‌روزرسانی'])
 
                         {!! Form::Close() !!}
 

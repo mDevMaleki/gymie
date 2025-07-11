@@ -5,7 +5,7 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
-            <h1 class="page-title">SMS Triggers</h1>
+            <h1 class="page-title">تریگرهای پیامک</h1>
         </div>
 
         <div class="container-fluid">
@@ -17,21 +17,21 @@
                             {!! Form::Open(['method' => 'POST','action' => ['SmsController@triggerUpdate']]) !!}
                             <div class="row margin-top-15 margin-bottom-15">
                                 <div class="col-xs-12 col-md-3 pull-right">
-                                    {!! Form::submit('Save', ['class' => 'btn btn-sm btn-primary pull-right']) !!}
+                                    {!! Form::submit('ذخیره', ['class' => 'btn btn-sm btn-primary pull-right']) !!}
                                 </div>
                             </div>
 
                             @if($triggers->count() == 0)
-                                <h4 class="text-center padding-top-15">Sorry! No records found</h4>
+                                <h4 class="text-center padding-top-15">متأسفیم! رکوردی یافت نشد</h4>
                             @else
 
                                 <table id="triggers" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th class="text-center">Name</th>
-                                        <th class="text-center">Message</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">On/Off</th>
+                                        <th class="text-center">نام</th>
+                                        <th class="text-center">پیام</th>
+                                        <th class="text-center">وضعیت</th>
+                                        <th class="text-center">روشن/خاموش</th>
                                     </tr>
                                     </thead>
                                     <tbody>
