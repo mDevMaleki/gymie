@@ -20,7 +20,7 @@
 
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head">Enter Details of the role</div>
+                            <div class="panel-head">جزئیات نقش را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['url' => 'user/role','id' => 'rolesform','files'=>'true']) !!}
@@ -29,21 +29,21 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('name','Role Name') !!}
+                                        {!! Form::label('name','نام نقش') !!}
                                         {!! Form::text('name',null,['class'=>'form-control', 'id' => 'name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('display_name','Display Name') !!}
+                                        {!! Form::label('display_name','نام نمایشی') !!}
                                         {!! Form::text('display_name',null,['class'=>'form-control', 'id' => 'display_name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('description','Description') !!}
+                                        {!! Form::label('description','توضیحات') !!}
                                         {!! Form::text('description',null,['class'=>'form-control', 'id' => 'description']) !!}
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
 
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head">Enter Permissions</div>
+                            <div class="panel-head">مجوزها را وارد کنید</div>
                         </div>
                         <div class="panel-body">
 
@@ -77,7 +77,7 @@
                     <div class="row">
                         <div class="col-sm-2 pull-right">
                             <div class="form-group">
-                                {!! Form::submit('Create', ['class' => 'btn btn-primary pull-right']) !!}
+                                {!! Form::submit('ایجاد', ['class' => 'btn btn-primary pull-right']) !!}
                             </div>
                         </div>
                     </div>

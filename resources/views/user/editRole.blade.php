@@ -20,7 +20,7 @@
 
                     <div class="panel no-border">
                         <div class="panel-title bg-white no-border">
-                            <div class="panel-head">Enter Details of the Role</div>
+                            <div class="panel-head">جزئیات نقش را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['method' => 'POST','id' => 'rolesform','action' => ['AclController@updateRole',$role->id]]) !!}
@@ -29,21 +29,21 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('name','Name') !!}
+                                        {!! Form::label('name','نام') !!}
                                         {!! Form::text('name',$role->name,['class'=>'form-control', 'id' => 'name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('display_name','Display name') !!}
+                                        {!! Form::label('display_name','نام نمایشی') !!}
                                         {!! Form::text('display_name',$role->display_name,['class'=>'form-control', 'id' => 'display_name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('description','Description') !!}
+                                        {!! Form::label('description','توضیحات') !!}
                                         {!! Form::text('description',$role->description,['class'=>'form-control', 'id' => 'description']) !!}
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
 
                     <div class="panel no-border">
                         <div class="panel-title bg-white no-border">
-                            <div class="panel-head">Select permission</div>
+                            <div class="panel-head">انتخاب مجوز</div>
                         </div>
                         <div class="panel-body">
                             @foreach($permissions->groupBy('group_key') as $permission_group)
@@ -77,7 +77,7 @@
                     <div class="row">
                         <div class="col-sm-2 pull-right">
                             <div class="form-group">
-                                {!! Form::submit('Update', ['class' => 'btn btn-primary pull-right']) !!}
+                                {!! Form::submit('به‌روزرسانی', ['class' => 'btn btn-primary pull-right']) !!}
                             </div>
                         </div>
                     </div>

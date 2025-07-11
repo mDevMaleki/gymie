@@ -22,7 +22,7 @@
 
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head">Enter Details of the user</div>
+                            <div class="panel-head">جزئیات کاربر را وارد کنید</div>
                         </div>
 
 
@@ -30,14 +30,14 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('name','Name') !!}
+                                        {!! Form::label('name','نام') !!}
                                         {!! Form::text('name',null,['class'=>'form-control', 'id' => 'name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('email','Email') !!}
+                                        {!! Form::label('email','ایمیل') !!}
                                         {!! Form::text('email',null,['class'=>'form-control', 'id' => 'email']) !!}
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                    {!! Form::label('status','Status') !!}
+                                    {!! Form::label('status','وضعیت') !!}
                                     <!--0 for inactive , 1 for active-->
                                         {!! Form::select('status',array('1' => 'Active', '0' => 'InActive'),null,['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'status']) !!}
                                     </div>
@@ -55,7 +55,7 @@
                                 @if(isset($user) && $user->photo != "")
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            {!! Form::label('photo','Photo') !!}
+                                            {!! Form::label('photo','عکس') !!}
                                             {!! Form::file('photo',['class'=>'form-control', 'id' => 'photo']) !!}
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                 @else
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            {!! Form::label('photo','Photo') !!}
+                                            {!! Form::label('photo','عکس') !!}
                                             {!! Form::file('photo',['class'=>'form-control', 'id' => 'photo']) !!}
                                         </div>
                                     </div>
@@ -76,14 +76,14 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('password','Password') !!}
+                                        {!! Form::label('password','رمز عبور') !!}
                                         {!! Form::password('password',['class'=>'form-control', 'id' => 'password']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        {!! Form::label('password_confirmation','Confirm Password') !!}
+                                        {!! Form::label('password_confirmation','تأیید رمز عبور') !!}
                                         {!! Form::password('password_confirmation',['class'=>'form-control', 'id' => 'password_confirmation']) !!}
                                     </div>
                                 </div>
@@ -93,14 +93,14 @@
 
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head">Enter Role of the user</div>
+                            <div class="panel-head">نقش کاربر را وارد کنید</div>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <?php $roles = App\Role::where('id', '!=', '1')->lists('name', 'id'); ?>
-                                        {!! Form::label('Role') !!}
+                                        {!! Form::label('Role','نقش') !!}
                                         {!! Form::select('role_id',$roles,null,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'role_id']) !!}
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                     <div class="row">
                         <div class="col-sm-2 pull-right">
                             <div class="form-group">
-                                {!! Form::submit('Create', ['class' => 'btn btn-primary pull-right']) !!}
+                                {!! Form::submit('ایجاد', ['class' => 'btn btn-primary pull-right']) !!}
                             </div>
                         </div>
                     </div>

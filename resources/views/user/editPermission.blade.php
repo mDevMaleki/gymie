@@ -20,7 +20,7 @@
 
                     <div class="panel no-border">
                         <div class="panel-title bg-white no-border">
-                            <div class="panel-head">Enter Details of the Permission</div>
+                            <div class="panel-head">جزئیات مجوز را وارد کنید</div>
                         </div>
 
                         {!! Form::Open(['method' => 'POST','id' => 'permissionsform','action' => ['AclController@updatePermission',$permission->id]]) !!}
@@ -29,28 +29,28 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('name','Name') !!}
+                                        {!! Form::label('name','نام') !!}
                                         {!! Form::text('name',$permission->name,['class'=>'form-control', 'id' => 'name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('display_name','Display name') !!}
+                                        {!! Form::label('display_name','نام نمایشی') !!}
                                         {!! Form::text('display_name',$permission->display_name,['class'=>'form-control', 'id' => 'display_name']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('description','Description') !!}
+                                        {!! Form::label('description','توضیحات') !!}
                                         {!! Form::text('description',$permission->description,['class'=>'form-control', 'id' => 'description']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        {!! Form::label('group_key','Group key') !!}
+                                        {!! Form::label('group_key','کلید گروه') !!}
                                         {!! Form::text('group_key',$permission->group_key,['class'=>'form-control', 'id' => 'group_key']) !!}
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-sm-2 pull-right">
                             <div class="form-group">
-                                {!! Form::submit('Update', ['class' => 'btn btn-primary pull-right']) !!}
+                                {!! Form::submit('به‌روزرسانی', ['class' => 'btn btn-primary pull-right']) !!}
                             </div>
                         </div>
                     </div>
