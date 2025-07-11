@@ -6,3 +6,11 @@ body {
 .form-control {
     text-align: right;
 }
+
+/* RTL layout overrides */
+.leftside{left:auto;right:0;}
+.fixed-leftside .rightside{margin-left:0;margin-right:240px;}
+.sidebar-sm .rightside,
+.sidebar-sm header .navbar{margin-left:0;margin-right:80px;}
+.sidebar-sm .rightside{padding-left:0;padding-right:80px;}
+.fixed-leftside.sidebar-sm .rightside{padding-left:0;padding-right:0;}
